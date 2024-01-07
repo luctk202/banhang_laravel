@@ -7,9 +7,8 @@
                     <script>
                         document.write(new Date().getFullYear())
                     </script>,
-                    made with <i class="fa fa-heart"></i> by
-                    <a href="" class="font-weight-bold" target="_blank">Huyhq</a>
-                    for a better web.
+                    được thực hiện <i class="fa fa-heart"></i> bởi
+                    <a href="" class="font-weight-bold" target="_blank">Trịnh Khắc Lực</a>
                 </div>
             </div>
 

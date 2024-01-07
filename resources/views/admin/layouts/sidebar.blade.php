@@ -6,8 +6,8 @@
             aria-hidden="true" id="iconSidenav"></i>
         <a class="navbar-brand m-0" href=" https://demos.creative-tim.com/material-dashboard/pages/dashboard "
             target="_blank">
-            <img src="./assets/img/logo-ct.png" class="navbar-brand-img h-100" alt="main_logo">
-            <span class="ms-1 font-weight-bold text-white">Hello: {{ auth()->user()->name }}</span>
+{{--            <img src="" class="navbar-brand-img h-100" alt="main_logo">--}}
+            <span class="ms-1 font-weight-bold text-white">Xin chào: {{ auth()->user()->name }}</span>
         </a>
     </div>
     <hr class="horizontal light mt-0 mb-2">

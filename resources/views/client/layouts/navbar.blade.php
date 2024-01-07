@@ -51,6 +51,7 @@
                     </div>
                     <div class="navbar-nav ml-auto py-0">
                         @if (auth()->check())
+                            <a class="dropdown-item" href="{{route('dashboard')}}">Dashboard</a>
                             <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                                              document.getElementById('logout-form').submit();">
                                 {{ __('Logout') }}
