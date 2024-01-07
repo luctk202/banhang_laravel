@@ -70,13 +70,12 @@ class UserService
      * @param $id
      * @return int
      */
-    public function delete($id): int
+    public function delete($id): void
     {
         $user = $this->findOrFail($id);
         $user->destroyImage($user?->images?->first()?->url);
         $this->deleteImage($user?->images?->first()?->url);
         $user->delete();
-        return $user;
     }
 
     /**
