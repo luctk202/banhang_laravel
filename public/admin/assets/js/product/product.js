@@ -8,7 +8,6 @@ $(() => {
         .catch((err) => {
             console.error(err.stack);
         });
-
     renderSizes(sizes);
     appendSizesToForm();
 
@@ -113,4 +112,3 @@ $(() => {
         readURL(this);
     });
 });
-

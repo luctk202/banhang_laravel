@@ -12,11 +12,11 @@ use Illuminate\Notifications\Notifiable;
 use Illuminate\Support\Facades\Storage;
 use Laravel\Sanctum\HasApiTokens;
 use Spatie\Permission\Traits\HasRoles;
-use App\Models\Image;
+
 class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
-    use HandleImageTrait, HasRoles;
+    use HandleImageTrait, HasRoles, Imaginable;
 
     const IMAGE_SAVE_PATH = 'public/upload/';
     const IMAGE_SHOW_PATH = 'storage/upload/';
@@ -57,9 +57,8 @@ class User extends Authenticatable
      * @param array|int $roles
      * @return array
      */
-    public function images()
+    public function assignRoles(array | int $roles): array
     {
-        return $this->morphMany(Image::class,'imageable');
+        return $this->roles()->sync($roles);
     }
 }
-

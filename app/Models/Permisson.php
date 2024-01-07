@@ -9,7 +9,8 @@ use Spatie\Permission\Models\Permission;
 class Permisson extends Permission
 {
     use HasFactory;
-    protected $fileable=[
+
+    protected $fillable = [
         'name',
         'display_name',
         'group'

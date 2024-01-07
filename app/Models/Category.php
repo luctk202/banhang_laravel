@@ -13,11 +13,11 @@ class Category extends Model
         'name',
         'parent_id',
     ];
+
     public function parent()
     {
         return $this->belongsTo(Category::class, 'parent_id');
     }
-
 
     public function childrens()
     {
@@ -35,4 +35,3 @@ class Category extends Model
         return Category::whereNull('parent_id')->with('childrens')->get(['id', 'name']);
     }
 }
-

@@ -41,4 +41,3 @@ trait Imaginable
         return $this->images()->delete();
     }
 }
-

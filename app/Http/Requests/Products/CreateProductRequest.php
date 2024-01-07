@@ -8,8 +8,10 @@ class CreateProductRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
+     *
+     * @return bool
      */
-    public function authorize(): bool
+    public function authorize()
     {
         return true;
     }
@@ -17,17 +19,17 @@ class CreateProductRequest extends FormRequest
     /**
      * Get the validation rules that apply to the request.
      *
-     * @return array<string, \Illuminate\Contracts\Validation\ValidationRule|array|string>
+     * @return array<string, mixed>
      */
-    public function rules(): array
+    public function rules()
     {
         return [
-            'name'=>'required',
+            'name' => 'required',
             'image' => 'required|image|mimes:png,jpg,PNG,jpec',
-            'description'=>'required',
-            'sale'=>'required',
-            'price'=>'required',
-            'category_ids'=>'required'
+            'description' => 'required',
+            'sale' => 'required',
+            'price' => 'required',
+            'category_ids' => 'required'
         ];
     }
 }

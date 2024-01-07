@@ -14,13 +14,13 @@ class ProductFactory extends Factory
      *
      * @return array<string, mixed>
      */
-    public function definition(): array
+    public function definition()
     {
         return [
-            'name'=>$this->faker->name(),
-            'description'=>$this->faker->text(),
-            'sale'=>0,
-            'price'=>200000
+            'name' => $this->faker->name(),
+            'description' => $this->faker->text(),
+            'sale'=> 0,
+            'price' => 200000,
         ];
     }
 }

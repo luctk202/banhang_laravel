@@ -3,6 +3,7 @@
 @section('content')
     <div class="card">
         <h1>Update User</h1>
+
         <div>
             <form action="{{ route('users.update', $user->id) }}" method="post" enctype="multipart/form-data">
                 @csrf
@@ -13,12 +14,12 @@
                         <input type="file" accept="image/*" name="image" id="image-input" class="form-control">
 
                         @error('image')
-                        <span class="text-danger"> {{ $message }}</span>
+                            <span class="text-danger"> {{ $message }}</span>
                         @enderror
                     </div>
                     <div class="col-5">
-                        <img src="{{ $user->images ? asset('upload/users/' . $user->images->first()->url ) : 'upload/users/default.png' }}"
-                             id="show-image" alt="">
+                        <img src="{{ $user->images ? asset('upload/users/' . $user->images->first()->url) : 'upload/users/default.png' }}"
+                            id="show-image" alt="">
                     </div>
                 </div>
 
@@ -27,7 +28,7 @@
                     <input type="text" value="{{ old('name') ?? $user->name }}" name="name" class="form-control">
 
                     @error('name')
-                    <span class="text-danger"> {{ $message }}</span>
+                        <span class="text-danger"> {{ $message }}</span>
                     @enderror
                 </div>
 
@@ -35,7 +36,7 @@
                     <label>Email</label>
                     <input type="email" value="{{ old('email') ?? $user->email }}" name="email" class="form-control">
                     @error('email')
-                    <span class="text-danger"> {{ $message }}</span>
+                        <span class="text-danger"> {{ $message }}</span>
                     @enderror
                 </div>
 
@@ -43,7 +44,7 @@
                     <label>Phone</label>
                     <input type="text" value="{{ old('phone') ?? $user->phone }}" name="phone" class="form-control">
                     @error('phone')
-                    <span class="text-danger"> {{ $message }}</span>
+                        <span class="text-danger"> {{ $message }}</span>
                     @enderror
                 </div>
 
@@ -56,7 +57,7 @@
                     </select>
 
                     @error('gender')
-                    <span class="text-danger"> {{ $message }}</span>
+                        <span class="text-danger"> {{ $message }}</span>
                     @enderror
                 </div>
 
@@ -64,7 +65,7 @@
                     <label>Address</label>
                     <textarea name="address" class="form-control">{{ old('address') ?? $user->address }} </textarea>
                     @error('address')
-                    <span class="text-danger"> {{ $message }}</span>
+                        <span class="text-danger"> {{ $message }}</span>
                     @enderror
                 </div>
 
@@ -73,7 +74,7 @@
                     <label>Password</label>
                     <input type="password" name="password" class="form-control">
                     @error('password')
-                    <span class="text-danger"> {{ $message }}</span>
+                        <span class="text-danger"> {{ $message }}</span>
                     @enderror
                 </div>
 
@@ -88,10 +89,10 @@
                                     @foreach ($role as $item)
                                         <div class="form-check">
                                             <input class="form-check-input" name="role_ids[]"
-                                                   {{ $user->roles->contains('id', $item->id) ? 'checked' : '' }}
-                                                   type="checkbox" value="{{ $item->id }}">
+                                                {{ $user->roles->contains('id', $item->id) ? 'checked' : '' }}
+                                                type="checkbox" value="{{ $item->id }}">
                                             <label class="custom-control-label"
-                                                   for="customCheck1">{{ $item->display_name }}</label>
+                                                for="customCheck1">{{ $item->display_name }}</label>
                                         </div>
                                     @endforeach
                                 </div>
@@ -110,7 +111,7 @@
 @section('script')
 
     <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
-            crossorigin="anonymous"></script>
+        crossorigin="anonymous"></script>
     <script>
         $(() => {
             function readURL(input) {
